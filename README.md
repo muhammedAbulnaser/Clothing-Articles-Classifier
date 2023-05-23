@@ -9,11 +9,10 @@
 │   │   ├── dataset.csv
 │   │   └── image folder
 │   ├── notebooks
-│   │   ├── exploration.ipynb
-│   ├── README.md
-| </pre>
+│   │   └──  exploration.ipynb
+│   ├── README.md </pre>
 
-This repository contains my solution for the clothing classifier task.
+This repository contains a solution for the clothing articles classifier task.
 
 ## Problem Statement
 
@@ -21,9 +20,15 @@ The task is to build a classifier for clothing articles. Given an input image of
 
 ## Approach
 
-1. **Data Collection**: Describe how you collected the dataset for training and evaluation. Include details such as the number of classes, the total number of images, and any data augmentation techniques used.
+1. **Data Collection**: The dataset provided is a comprehensive collection of data from the e-commerce industry. It includes professionally captured high-resolution product images, along with manually-entered label attributes and descriptive text. Each product is uniquely identified by an ID, and the mapping between products and images is available in the styles.csv file. Additionally, key product categories and their display names are provided for easy reference. The dataset contains around ***45k images*** with ***143 class***. [Link To the Dataset]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small))
 
-2. **Data Preprocessing**: Explain the steps taken to preprocess the data, such as resizing the images, normalizing pixel values, and splitting the dataset into training and testing sets. Mention any additional preprocessing techniques applied.
+2. **Data Preprocessing**:                                                                                                                                        - Data Preprocessing Steps:
+    - Cleaning Unexisting Files: This step ensures the integrity of the dataset by removing records where the corresponding image file does not exist. It iterates over each row in the DataFrame and checks if the image file path exists. Rows with non-existing image files are dropped from the DataFrame.
+    - Calculate Category “article type ”Counts: The code calculates the count of each unique articleType category in the DataFrame. This provides insights into the distribution of categories within the dataset.
+    - Filter Dataset based on Category Counts: The dataset is filtered to focus on categories that have a count greater than 1000. Rows with article types that do not meet this threshold are removed, resulting in a filtered DataFrame. This step is to minimize the huge imbalancing found in this dataset resulting to only ***10 classes*** out of ***143 classes*** originally in the dataset.
+    - Split Dataset into Training and Testing Sets: The filtered DataFrame is split into a training dataset and a testing dataset. The train_test_split function is used, where 80% of the data is allocated for training and 20% for testing. Where the random seed ensures reproducibility.
+    - Define ClothDataset Class: The ClothDataset class is defined as a subclass of torch.utils.data.Dataset. It represents the dataset of images and their corresponding article types. The class takes the root directory, the DataFrame (train or test), and an optional transform argument (e.g., resizing and converting to tensors).
+    - 
 
 3. **Model Architecture**: Provide an overview of the chosen model architecture for the clothing classifier. If you used a pre-trained model, mention the specific model and any modifications made. Include the number of parameters in the model.
 
