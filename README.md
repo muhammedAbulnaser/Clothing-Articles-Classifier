@@ -80,7 +80,13 @@ Another example of an overall receptive field of ***VGG16*** model:
 
 To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.
     - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
-    - ***Modifying Stride:*** ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
+    - ***Modifying Stride:***  ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
+    
+To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done
+
+    - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
+
+    - ***Modifying Stride:***  ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
     
 ## FLOPS and MACCs Calculation
 
