@@ -28,7 +28,7 @@ This repository contains a solution for the clothing articles classifier task.
 
 The task is to build a classifier for clothing articles. Given an input image of a clothing item, the model should predict the corresponding class or category.
 
-<details open>
+<details>
 <summary>Quick Start</summary>
 
 1. Clone the repo `https://github.com/muhammedAbulnaser/Clothing-Classifier`
@@ -47,7 +47,7 @@ python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --
 </pre>  
 </details> 
 
-<details open>
+<details>
 <summary>Approach</summary>
 
 1. **Data Collection**: The dataset provided is a comprehensive collection of data from the e-commerce industry. It includes professionally captured high-resolution product images, along with manually-entered label attributes and descriptive text. Each product is uniquely identified by an ID, and the mapping between products and images is available in the styles.csv file. Additionally, key product categories and their display names are provided for easy reference. The dataset contains around `45k images`with `143 class`. [Link To the Dataset]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small))
@@ -92,7 +92,7 @@ Results of the Micro F1 Score 3 used models:
 
 </details>
 
-<details open>
+<details>
 <summary>Receptive Field</summary>
   
 The receptive field is a concept in convolutional neural networks (CNNs) that refers to the region in the input space that influences the output of a particular neuron or feature map. It represents the effective area of the input that is taken into account when computing the response of a neuron.
@@ -114,7 +114,7 @@ To increase or decrease the receptive field of the VGG16 model ***for example***
     - ***Modifying Stride:*** `Increasing` the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while `Decreasing` the stride, on the other hand, will increase the receptive field.
 </details>
 
-<details open>
+<details>
 <summary>FLOPS and MACCs Calculation</summary>
 Results of total `FLOPS` and `MACCs`
 | Metric type | Params (M) | FLOPs (G) | MACs (G) |
