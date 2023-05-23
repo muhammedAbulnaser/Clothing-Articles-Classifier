@@ -77,11 +77,11 @@ An example of an overall receptive field of ***resnet18*** model:
 Another example of an overall receptive field of ***VGG16*** model:
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/e48004f5-926a-449a-98be-969082126424)
 
-To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.                                             
+
+To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.
     - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
     - ***Modifying Stride:*** ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
-
-
+    
 ## FLOPS and MACCs Calculation
 
 Results of total FLOPS and MACCs
@@ -90,6 +90,7 @@ Results of total FLOPS and MACCs
 |VGG16|  138.36 |  30.96 | 15.47  |		
 |Resnet18|  11.69 |  3.64 |  1.82  |		
 |MobileNet|  3.5 |  0.63 |  0.31  | 		
+
 where:
     - (M) refers to milion
     - (G) Giga
@@ -101,7 +102,7 @@ Run the FlopsMaccsCalculator.py from the code folder
 
 ## Conclusion
 
-Considering the deployment requirements of minimal model size and number of computations, MobileNet stands out as the most efficient model. It has significantly fewer parameters, FLOPs, and MACs compared to VGG16 and ResNet18 while still achieving a competitive Micro F1 Score of 93.3%.
+Considering the deployment requirements of minimal model size and number of computations, MobileNet stands out as the most efficient model. It has significantly fewer parameters, FLOPs, and MACs compared to VGG16 and ResNet18 while still achieving a competitive Micro F1 Score of '''93.3%'''.
 
 Therefore, if the goal is to prioritize efficiency and minimize computational resources, MobileNet would be a suitable choice. However, the final model selection should also consider other factors such as the specific application requirements and the trade-off between model performance and computational cost.
 
