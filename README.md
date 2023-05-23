@@ -1,4 +1,4 @@
-This repository contains a solution for the clothing articles classifier task.
+## This repository contains a solution for the clothing articles classifier task.
 
 ## Problem Statement
 
