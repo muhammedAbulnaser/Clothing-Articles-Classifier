@@ -5,8 +5,10 @@
 │   │   ├── ClothDataset.py
 │   │   ├── ModelLoader.py
 │   │   ├── ModelTrainerEvaluater.py
-│   │   ├── __init__.py
+│   │   ├── __init__.py 
 │   │   ├── utils.py
+│   │   ├── ReceptiveField.py
+│   │   ├── FlopsMaccsCalculator.py
 │   │   └── preprocessing.py
 │   │ 
 │   ├── data
@@ -104,6 +106,9 @@ Results of the receptive field of 3 used models:
 |:-----:|:--------:|:---------:|
 |  212 x 212 |  99 x 99 |  315 x 315  |
 
+***to generate receptive field as in the next example***
+Run the `ReceptiveField.py` from the src folder.
+   
 An example of an overall receptive field of ***resnet18*** model:
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/2e915bed-5727-43b0-b5c8-417bffc74631)
 
@@ -131,7 +136,7 @@ where:
     - (G) Giga
    
 ***to generate FLOPS and MACCs per layer as in the next example***
-Run the `FlopsMaccsCalculator.py` from the code folder 
+Run the `FlopsMaccsCalculator.py` from the src folder. 
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/83af0f12-33b7-4afa-add5-9f1bf1ad282c)
 
 </details>
