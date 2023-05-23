@@ -6,6 +6,7 @@
 │   │   ├── ModelLoader.py
 │   │   ├── ModelTrainerEvaluater.py
 │   │   ├── __init__.py
+│   │   ├── utils.py
 │   │   └── preprocessing.py
 │   │ 
 │   ├── data
@@ -32,14 +33,15 @@ The task is to build a classifier for clothing articles. Given an input image of
 <summary>Quick Start</summary>
 
 1. Clone the repo `https://github.com/muhammedAbulnaser/Clothing-Classifier`
-2. Download the data[data]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)) in the data folder with this structure 
+2. intall the required libraries `pip install -r requirements.txt`  
+3. Download the data[data]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)) in the data folder with this structure 
 <pre>
 ├── data
 │   ├── images "Contains the images" 
 |   └── styles.csv "Contains the labels"
 </pre>
 
-3. run the `main.py` python file to train and evaluate the model of your choose
+4. run the `main.py` python file to train and evaluate the model of your choose
 <pre>
 python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --epochs 5 
                               "vgg16" 
@@ -140,4 +142,8 @@ Considering the deployment requirements of minimal model size and number of comp
 
 Therefore, if the goal is to prioritize efficiency and minimize computational resources, MobileNet would be a suitable choice. However, the final model selection should also consider other factors such as the specific application requirements and the trade-off between model performance and computational cost.
 
-
+**Future Work
+1. Handling the problem of imblanced dataset using `oversampling` technique and data augmentation.
+2. try different optimizers such as `Adam`.
+3. Training the model more epochs due to lack of the resources "google colab".
+4. Add an early stopping feature in the code to avoid any sort of overfitting.
