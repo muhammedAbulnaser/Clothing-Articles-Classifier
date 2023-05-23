@@ -60,7 +60,7 @@ Due to imbalanced dataset
 Results of the Micro F1 Score 3 used models:
 | Metric type | VGG16 | Resnet18 | MobileNet |
 |:-----------:|:-----:|:--------:|:---------:|
-|Micro F1 Score|  94.7 % |  99 x 99 |  315 x 315  |
+|Micro F1 Score|  94.7 % |  91.8 % |  93.3 %  |
 
 ## Receptive Field
 
@@ -77,21 +77,32 @@ An example of an overall receptive field of ***resnet18*** model:
 Another example of an overall receptive field of ***VGG16*** model:
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/e48004f5-926a-449a-98be-969082126424)
 
-To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.                                              
+To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.                                             
     - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
-    - Modifying Stride: ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
+    - ***Modifying Stride:*** ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
 
 
 ## FLOPS and MACCs Calculation
 
-Report the estimated or calculated number of FLOPS (floating-point operations) and MACCs (multiply-accumulate operations) per layer in your model, focusing mainly on the convolutional and fully connected layers. Highlight the most computationally expensive layers in terms of FLOPS and MACCs.
-
-Discuss strategies to decrease the number of FLOPS and MACCs in the model, such as model pruning, quantization, or using alternative lightweight architectures. Provide examples to support your recommendations.
+Results of total FLOPS and MACCs
+| Metric type | Params (M) | FLOPs (G) | MACs (G) |
+|:-----------:|:-----:|:--------:|:---------:|
+|VGG16|  138.36 |  30.96 | 15.47  |		
+|Resnet18|  11.69 |  3.64 |  1.82  |		
+|MobileNet|  3.5 |  0.63 |  0.31  | 		
+where:
+    - (M) refers to milion
+    - (G) Giga
+    
+***to generate FLOPS and MACCs per layer as in the next example***
+Run the FlopsMaccsCalculator.py from the code folder 
+![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/83af0f12-33b7-4afa-add5-9f1bf1ad282c)
 
 
 ## Conclusion
 
-Summarize your approach, key findings, and any limitations or challenges faced during the development of the clothing classifier. Discuss possible future improvements or extensions to the model or evaluation process.
+Considering the deployment requirements of minimal model size and number of computations, MobileNet stands out as the most efficient model. It has significantly fewer parameters, FLOPs, and MACs compared to VGG16 and ResNet18 while still achieving a competitive Micro F1 Score of 93.3%.
 
-Feel free to reach out if you have any questions or suggestions!
+Therefore, if the goal is to prioritize efficiency and minimize computational resources, MobileNet would be a suitable choice. However, the final model selection should also consider other factors such as the specific application requirements and the trade-off between model performance and computational cost.
+
 
