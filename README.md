@@ -36,10 +36,13 @@ The task is to build a classifier for clothing articles. Given an input image of
 │   ├── images "Contains the images" 
 |   └── styles.csv "Contains the labels"
 </pre>
+
 3. run the `main.py` python file to train and evaluate the model of your choose
- ```    python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --epochs 5 ```
- ```                                  "vgg16" ```
- ```                                  "resnet" ```
+<pre>
+python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --epochs 5 
+                              "vgg16" 
+                             "resnet" 
+</pre>  
  
 ## Approach
 
