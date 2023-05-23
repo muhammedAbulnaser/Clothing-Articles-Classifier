@@ -1,5 +1,16 @@
-# Clothing Classifier
-
+|
+├── # Clothing Classifier
+│   ├── code
+│   │   ├── models.py
+│   │   ├── utils.py
+│   │   └── preprocessing.py
+│   ├── data
+│   │   ├── dataset.csv
+│   │   └── image folder
+│   ├── notebooks
+│   │   ├── exploration.ipynb
+│   ├── README.md
+|
 This repository contains my solution for the clothing classifier task as part of the ML Engineer position at [Company Name].
 
 ## Problem Statement
