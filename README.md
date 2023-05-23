@@ -1,3 +1,9 @@
+This repository contains a solution for the clothing articles classifier task.
+
+## Problem Statement
+
+The task is to build a classifier for clothing articles. Given an input image of a clothing item, the model should predict the corresponding class or category.
+
 # Clothing Articles Classifier Repo structure
 <pre>
 ├── Clothing Classifier
@@ -25,11 +31,7 @@
 │   │ 
 │   └── README.md </pre>
 
-This repository contains a solution for the clothing articles classifier task.
 
-## Problem Statement
-
-The task is to build a classifier for clothing articles. Given an input image of a clothing item, the model should predict the corresponding class or category.
 
 <details>
 <summary>Quick Start</summary>
@@ -66,8 +68,14 @@ python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --
 3. **Model Architecture**:
 For the clothing articles classifier, three model architectures were used: VGG16, ResNet18, and MobileNet. Here's an overview of each model: 
     - ***VGG16:*** VGG16 is a deep convolutional neural network architecture that was introduced by the Visual Geometry Group at the University of Oxford. It consists of `16` convolutional layers, including five max-pooling layers and three fully connected layers. The model has a fixed input size of 224x224 pixels. In PyTorch, the VGG16 model is available through the 'torchvision.models' module.
+    ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/78763c18-141a-417b-86d2-7ca782a0ca7c)
+
     - ***ResNet18:*** ResNet18 is a variant of the ResNet (Residual Network) architecture developed by Microsoft Research. It consists of `18` layers, including convolutional layers, batch normalization, and residual connections. Residual connections allow the network to learn residual mappings, which can alleviate the degradation problem in deep neural networks. The ResNet18 model also has an input size of 224x224 pixels and is available in PyTorch's 'torchvision.models' module.
+    ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/eb9cec15-fd10-4ce7-bcf6-d15c8c80f530)
+
     - ***MobileNet:*** MobileNet is a lightweight convolutional neural network architecture designed for mobile and embedded devices. It utilizes depthwise separable convolutions, which split the standard convolutional operation into a depthwise convolution and a pointwise convolution. This reduces computational complexity and model size while maintaining accuracy. MobileNet is also available in the 'torchvision.models' module.
+    ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/74c51447-d4b7-402c-bbfd-922c9d881818)
+
 
 Each of these models was pretrained on large-scale datasets such as ImageNet. By leveraging transfer learning, the pretrained models' weights were used as a starting point for the clothing articles classification task, and only the final classification layer was modified to match the number of clothing categories in the dataset, `10 classes` after filteration.
 
