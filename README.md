@@ -1,5 +1,5 @@
-```
-|
+
+<pre>
 ├── # Clothing Classifier
 │   ├── code
 │   │   ├── models.py
@@ -11,43 +11,7 @@
 │   ├── notebooks
 │   │   ├── exploration.ipynb
 │   ├── README.md
-| ```
-
-`AI_Repository`
-│
-├── `Project_1`
-│   ├── `code`
-│   │   ├── `model.py`
-│   │   ├── `utils.py`
-│   │   └── ...
-│   ├── `data`
-│   │   ├── `dataset_1.csv`
-│   │   ├── `dataset_2.csv`
-│   │   └── ...
-│   ├── `notebooks`
-│   │   ├── `exploration.ipynb`
-│   │   ├── `training.ipynb`
-│   │   └── ...
-│   ├── `README.md`
-│   └── ...
-
-AI_Repository
-├── Project_1
-│   ├── code
-│   │   ├── model.py
-│   │   ├── utils.py
-│   │   └── ...
-│   ├── data
-│   │   ├── dataset_1.csv
-│   │   ├── dataset_2.csv
-│   │   └── ...
-│   ├── notebooks
-│   │   ├── exploration.ipynb
-│   │   ├── training.ipynb
-│   │   └── ...
-│   ├── README.md
-│   └── ...
-
+| </pre>
 
 This repository contains my solution for the clothing classifier task as part of the ML Engineer position at [Company Name].
 
