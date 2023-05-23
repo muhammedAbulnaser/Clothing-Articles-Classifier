@@ -28,7 +28,9 @@ This repository contains a solution for the clothing articles classifier task.
 
 The task is to build a classifier for clothing articles. Given an input image of a clothing item, the model should predict the corresponding class or category.
 
-## Quick Start
+<details open>
+<summary>## Quick Start</summary>
+
 1. Clone the repo `https://github.com/muhammedAbulnaser/Clothing-Classifier`
 2. Download the data[data]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)) in the data folder with this structure 
 <pre>
@@ -43,7 +45,7 @@ python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --
                               "vgg16" 
                              "resnet" 
 </pre>  
- 
+</details> 
 ## Approach
 
 1. **Data Collection**: The dataset provided is a comprehensive collection of data from the e-commerce industry. It includes professionally captured high-resolution product images, along with manually-entered label attributes and descriptive text. Each product is uniquely identified by an ID, and the mapping between products and images is available in the styles.csv file. Additionally, key product categories and their display names are provided for easy reference. The dataset contains around `45k images`with `143 class`. [Link To the Dataset]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small))
@@ -115,11 +117,11 @@ Results of total `FLOPS` and `MACCs`
 |VGG16|  138.36 |  30.96 | 15.47  |		
 |Resnet18|  11.69 |  3.64 |  1.82  |		
 |MobileNet|  3.5 |  0.63 |  0.31  | 		
-
+<pre>  
 where:
     - (M) refers to milion
     - (G) Giga
-    
+</pre>   
 ***to generate FLOPS and MACCs per layer as in the next example***
 Run the `FlopsMaccsCalculator.py` from the code folder 
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/83af0f12-33b7-4afa-add5-9f1bf1ad282c)
