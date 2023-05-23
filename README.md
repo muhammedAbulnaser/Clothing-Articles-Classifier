@@ -1,17 +1,26 @@
 # Clothing Articles Classifier Repo structure
 <pre>
 ├── Clothing Classifier
-│   ├── code
-│   │   ├── models.py
-│   │   ├── utils.py
-│   │   ├── main.py
+│   ├── src
+│   │   ├── ClothDataset.py
+│   │   ├── ModelLoader.py
+│   │   ├── ModelTrainerEvaluater.py
+│   │   ├── __init__.py
 │   │   └── preprocessing.py
+│   │ 
 │   ├── data
-│   │   ├── dataset.csv
+│   │   ├── styles.csv
 │   │   └── image folder
+│   │ 
 │   ├── notebooks
-│   │   └──  exploration.ipynb
-│   ├── README.md </pre>
+│   │   └──  simpleEDA.ipynb
+│   │ 
+│   ├── weights
+│   │   └── saved weights
+│   │ 
+│   ├── main.py
+│   │ 
+│   └── README.md </pre>
 
 This repository contains a solution for the clothing articles classifier task.
 
@@ -19,6 +28,19 @@ This repository contains a solution for the clothing articles classifier task.
 
 The task is to build a classifier for clothing articles. Given an input image of a clothing item, the model should predict the corresponding class or category.
 
+## Quick Start
+1. Clone the repo `https://github.com/muhammedAbulnaser/Clothing-Classifier`
+2. Download the data[data]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)) in the data folder with this structure 
+<pre>
+├── data
+│   ├── images "Contains the images" 
+|   └── styles.csv "Contains the labels"
+</pre>
+3. run the `main.py` python file to train and evaluate the model of your choose
+ ``` python main.py --model_type "mobilenet" --data_path "data/" --num_classes 10  --epochs 5
+                                   "vgg16"
+                                   "resnet"
+ ```
 ## Approach
 
 1. **Data Collection**: The dataset provided is a comprehensive collection of data from the e-commerce industry. It includes professionally captured high-resolution product images, along with manually-entered label attributes and descriptive text. Each product is uniquely identified by an ID, and the mapping between products and images is available in the styles.csv file. Additionally, key product categories and their display names are provided for easy reference. The dataset contains around `45k images`with `143 class`. [Link To the Dataset]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small))
