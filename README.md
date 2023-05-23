@@ -31,23 +31,56 @@ The task is to build a classifier for clothing articles. Given an input image of
     - ***Define ClothDataset Class:*** The ClothDataset class is defined as a subclass of torch.utils.data.Dataset. It represents the dataset of images and their corresponding article types. The class takes the root directory, the DataFrame (train or test), and an optional transform argument (e.g., resizing and converting to tensors).
  
 
-3. **Model Architecture**:                                                                                                                                        For the clothing articles classifier, three model architectures were used: VGG16, ResNet18, and MobileNet. Here's an overview of each model:                          - ***VGG16:*** VGG16 is a deep convolutional neural network architecture that was introduced by the Visual Geometry Group at the University of Oxford. It consists of 16 convolutional layers, including five max-pooling layers and three fully connected layers. The model has a fixed input size of 224x224 pixels. In PyTorch, the VGG16 model is available through the 'torchvision.models' module.
+3. **Model Architecture**:
+For the clothing articles classifier, three model architectures were used: VGG16, ResNet18, and MobileNet. Here's an overview of each model: 
+    - ***VGG16:*** VGG16 is a deep convolutional neural network architecture that was introduced by the Visual Geometry Group at the University of Oxford. It consists of 16 convolutional layers, including five max-pooling layers and three fully connected layers. The model has a fixed input size of 224x224 pixels. In PyTorch, the VGG16 model is available through the 'torchvision.models' module.
     - ***ResNet18:*** ResNet18 is a variant of the ResNet (Residual Network) architecture developed by Microsoft Research. It consists of 18 layers, including convolutional layers, batch normalization, and residual connections. Residual connections allow the network to learn residual mappings, which can alleviate the degradation problem in deep neural networks. The ResNet18 model also has an input size of 224x224 pixels and is available in PyTorch's 'torchvision.models' module.
     - ***MobileNet:*** MobileNet is a lightweight convolutional neural network architecture designed for mobile and embedded devices. It utilizes depthwise separable convolutions, which split the standard convolutional operation into a depthwise convolution and a pointwise convolution. This reduces computational complexity and model size while maintaining accuracy. MobileNet is also available in the 'torchvision.models' module.
 
 Each of these models was pretrained on large-scale datasets such as ImageNet. By leveraging transfer learning, the pretrained models' weights were used as a starting point for the clothing articles classification task, and only the final classification layer was modified to match the number of clothing categories in the dataset, ***10 classes*** after filteration.
 
-4. **Training**: Describe the training process, including the optimization algorithm used, the learning rate schedule, the batch size, and the number of training epochs. Mention any regularization techniques applied, such as dropout or weight decay.
+4. **Training**:
 
-5. **Evaluation Metrics**: Clearly state the metrics used to evaluate the performance of the classifier. Explain why you chose these metrics and their relevance to the problem at hand.
+    - Optimization Algorithm: The SGD optimizer stands for Stochastic Gradient Descent. 
 
-6. **Results**: Present the results of your tests, including the accuracy or other relevant metrics achieved on the testing set. Provide insights into the performance of the classifier and any observations made during evaluation.
+    - Learning Rate Schedule: The learning rate is set to 0.001.
+    
+    - The loss function: The CrossEntropyLoss used for multi-class classification tasks and combines the softmax activation function and the negative log-likelihood loss. 
+    
+    - Batch Size: The batch size used for training is 16.
+
+    - Number of Training Epochs: The number of training epochs is 3 due to the lack of resources "Working on free google colab"
+
+5. **Evaluation Metrics**: 
+Due to imbalanced dataset
+    - ***Micro F1 Score:*** Micro F1 score calculates the F1 score by considering the total number of true positives, false positives, and false negatives across all classes. It treats the ***imbalanced dataset*** as a single classification task and gives equal weight to each sample. Micro F1 score is suitable when you want to ***prioritize overall performance*** and treat each sample equally.
+
+6. **Results**:
+
+Results of the Micro F1 Score 3 used models:
+| Metric type | VGG16 | Resnet18 | MobileNet |
+|:-----------:|:-----:|:--------:|:---------:|
+|Micro F1 Score|  94.7 % |  99 x 99 |  315 x 315  |
 
 ## Receptive Field
 
-Discuss the overall receptive field of your model. Explain how receptive field size impacts the model's ability to capture global and local information in the images. Provide examples to demonstrate the receptive field at different stages of the model.
+The receptive field is a concept in convolutional neural networks (CNNs) that refers to the region in the input space that influences the output of a particular neuron or feature map. It represents the effective area of the input that is taken into account when computing the response of a neuron.
 
-Explain how the receptive field can be increased or decreased based on the model architecture or modifications.
+Results of the receptive field of 3 used models:
+| VGG16 | Resnet18 | MobileNet |
+|:-----:|:--------:|:---------:|
+|  212 x 212 |  99 x 99 |  315 x 315  |
+
+An example of an overall receptive field of ***resnet18*** model:
+![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/2e915bed-5727-43b0-b5c8-417bffc74631)
+
+Another example of an overall receptive field of ***VGG16*** model:
+![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/e48004f5-926a-449a-98be-969082126424)
+
+To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.
+    - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
+    - Modifying Stride: ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
+
 
 ## FLOPS and MACCs Calculation
 
@@ -55,9 +88,6 @@ Report the estimated or calculated number of FLOPS (floating-point operations) a
 
 Discuss strategies to decrease the number of FLOPS and MACCs in the model, such as model pruning, quantization, or using alternative lightweight architectures. Provide examples to support your recommendations.
 
-## Repository Structure
-
-Describe the structure of your repository, including the organization of code files, data directories, and any additional resources. Provide instructions for running the code, reproducing the results, and any dependencies or package versions required.
 
 ## Conclusion
 
