@@ -116,17 +116,18 @@ To increase or decrease the receptive field of the VGG16 model ***for example***
 
 <details>
 <summary>FLOPS and MACCs Calculation</summary>
+  
 Results of total `FLOPS` and `MACCs`
 | Metric type | Params (M) | FLOPs (G) | MACs (G) |
 |:-----------:|:-----:|:--------:|:---------:|
 |VGG16|  138.36 |  30.96 | 15.47  |		
 |Resnet18|  11.69 |  3.64 |  1.82  |		
 |MobileNet|  3.5 |  0.63 |  0.31  | 		
-<pre>  
+  
 where:
     - (M) refers to milion
     - (G) Giga
-</pre>   
+   
 ***to generate FLOPS and MACCs per layer as in the next example***
 Run the `FlopsMaccsCalculator.py` from the code folder 
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/83af0f12-33b7-4afa-add5-9f1bf1ad282c)
