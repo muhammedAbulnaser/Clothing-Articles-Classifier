@@ -76,7 +76,6 @@ An example of an overall receptive field of ***resnet18*** model:
 
 Another example of an overall receptive field of ***VGG16*** model:
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/e48004f5-926a-449a-98be-969082126424)
-
 To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.
     - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
     - Modifying Stride: ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
