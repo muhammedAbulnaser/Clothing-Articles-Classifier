@@ -23,6 +23,10 @@ The task is to build a classifier for clothing articles. Given an input image of
 
 1. **Data Collection**: The dataset provided is a comprehensive collection of data from the e-commerce industry. It includes professionally captured high-resolution product images, along with manually-entered label attributes and descriptive text. Each product is uniquely identified by an ID, and the mapping between products and images is available in the styles.csv file. Additionally, key product categories and their display names are provided for easy reference. The dataset contains around ***45k images*** with ***143 class***. [Link To the Dataset]([URL](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small))
 
+---
+* * *
+___
+
 2. **Data Preprocessing Steps**:                                                                                                                                 
     - ***Cleaning Unexisting Files:*** This step ensures the integrity of the dataset by removing records where the corresponding image file does not exist. It iterates over each row in the DataFrame and checks if the image file path exists. Rows with non-existing image files are dropped from the DataFrame.
     - ***Calculate Category “article type ”Counts:*** The code calculates the count of each unique articleType category in the DataFrame. This provides insights into the distribution of categories within the dataset.
@@ -30,6 +34,9 @@ The task is to build a classifier for clothing articles. Given an input image of
     - ***Split Dataset into Training and Testing Sets:*** The filtered DataFrame is split into a training dataset and a testing dataset. The train_test_split function is used, where 80% of the data is allocated for training and 20% for testing. Where the random seed ensures reproducibility.
     - ***Define ClothDataset Class:*** The ClothDataset class is defined as a subclass of torch.utils.data.Dataset. It represents the dataset of images and their corresponding article types. The class takes the root directory, the DataFrame (train or test), and an optional transform argument (e.g., resizing and converting to tensors).
  
+---
+* * *
+___
 
 3. **Model Architecture**:
 For the clothing articles classifier, three model architectures were used: VGG16, ResNet18, and MobileNet. Here's an overview of each model: 
@@ -38,6 +45,10 @@ For the clothing articles classifier, three model architectures were used: VGG16
     - ***MobileNet:*** MobileNet is a lightweight convolutional neural network architecture designed for mobile and embedded devices. It utilizes depthwise separable convolutions, which split the standard convolutional operation into a depthwise convolution and a pointwise convolution. This reduces computational complexity and model size while maintaining accuracy. MobileNet is also available in the 'torchvision.models' module.
 
 Each of these models was pretrained on large-scale datasets such as ImageNet. By leveraging transfer learning, the pretrained models' weights were used as a starting point for the clothing articles classification task, and only the final classification layer was modified to match the number of clothing categories in the dataset, ***10 classes*** after filteration.
+
+---
+* * *
+___
 
 4. **Training**:
 
@@ -51,9 +62,17 @@ Each of these models was pretrained on large-scale datasets such as ImageNet. By
 
     - Number of Training Epochs: The number of training epochs is 3 due to the lack of resources "Working on free google colab"
 
+---
+* * *
+___
+
 5. **Evaluation Metrics**: 
 Due to imbalanced dataset
     - ***Micro F1 Score:*** Micro F1 score calculates the F1 score by considering the total number of true positives, false positives, and false negatives across all classes. It treats the ***imbalanced dataset*** as a single classification task and gives equal weight to each sample. Micro F1 score is suitable when you want to ***prioritize overall performance*** and treat each sample equally.
+
+---
+* * *
+___
 
 6. **Results**:
 
@@ -61,6 +80,11 @@ Results of the Micro F1 Score 3 used models:
 | Metric type | VGG16 | Resnet18 | MobileNet |
 |:-----------:|:-----:|:--------:|:---------:|
 |Micro F1 Score|  94.7 % |  91.8 % |  93.3 %  |
+
+---
+* * *
+___
+
 
 ## Receptive Field
 
@@ -77,15 +101,15 @@ An example of an overall receptive field of ***resnet18*** model:
 Another example of an overall receptive field of ***VGG16*** model:
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/e48004f5-926a-449a-98be-969082126424)
 
-
+---
+* * *
+___    
 To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done.
     - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
-    - ***Modifying Stride:***  ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
-    
-To increase or decrease the receptive field of the VGG16 model ***for example***, modification to the architecture by adjusting the size of the convolutional kernels and the stride should be done
-    - ***Changing Kernel Size:*** ***Increasing*** the size of the convolutional kernels in the layers will increase the receptive field size. while ***Decreasing*** kernel sizes such as 1x1 can decrease the receptive field as it focuses on local information.
-    - ***Modifying Stride:***  ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
-    
+    - ***Modifying Stride:*** ***Increasing*** the stride of the convolutional layers will reduce the spatial resolution leading to decreasing in the receptive field. while ***Decreasing*** the stride, on the other hand, will increase the receptive field.
+---
+* * *
+___   
 ## FLOPS and MACCs Calculation
 
 Results of total FLOPS and MACCs
