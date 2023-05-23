@@ -6,3 +6,5 @@ Pillow
 matplotlib
 scikit-learn
 argparse
+torchstat 
+torchscan 
