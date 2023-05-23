@@ -132,7 +132,8 @@ Run the `FlopsMaccsCalculator.py` from the code folder
 ![image](https://github.com/muhammedAbulnaser/Clothing-Classifier/assets/63162632/83af0f12-33b7-4afa-add5-9f1bf1ad282c)
 
 </details>
-## Conclusion
+
+**Conclusion**
 
 Considering the deployment requirements of minimal model size and number of computations, MobileNet stands out as the most efficient model. It has significantly fewer parameters, FLOPs, and MACs compared to VGG16 and ResNet18 while still achieving a competitive Micro F1 Score of `93.3%`.
 
