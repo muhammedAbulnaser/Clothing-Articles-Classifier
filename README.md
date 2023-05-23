@@ -2,14 +2,14 @@
 <pre>
 ├── # Clothing Classifier
 │   ├── code
-│   │   ├── models.py
-│   │   ├── utils.py
-│   │   └── preprocessing.py
+│   │   ├── `models.py`
+│   │   ├── `utils.py`
+│   │   └── `preprocessing.py`
 │   ├── data
-│   │   ├── dataset.csv
-│   │   └── image folder
+│   │   ├── `dataset.csv`
+│   │   └── `image folder`
 │   ├── notebooks
-│   │   ├── exploration.ipynb
+│   │   ├── `exploration.ipynb`
 │   ├── README.md
 | </pre>
 
